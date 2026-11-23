@@ -1,0 +1,10 @@
+CREATE TABLE pedidos (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id BIGINT NOT NULL,
+    total DOUBLE NOT NULL,
+    estado VARCHAR(50) NOT NULL, -- PENDIENTE, PAGADO, EN_DESPACHO, ENTREGADO
+    direccion VARCHAR(255),
+    horario_entrega VARCHAR(100),
+    notas VARCHAR(255) NULL,
+    fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP
+);

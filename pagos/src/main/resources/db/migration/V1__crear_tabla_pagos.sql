@@ -1,0 +1,9 @@
+CREATE TABLE pagos (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    pedido_id BIGINT NOT NULL,
+    monto DOUBLE NOT NULL,
+    metodo_pago VARCHAR(50) NOT NULL, -- TARJETA, EFECTIVO
+    estado VARCHAR(50) NOT NULL, -- APROBADO, RECHAZADO
+    codigo_transaccion VARCHAR(100),
+    fecha_pago DATETIME DEFAULT CURRENT_TIMESTAMP
+);
