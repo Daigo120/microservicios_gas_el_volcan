@@ -16,5 +16,5 @@ public class Boleta {
     private LocalDateTime fechaEmision = LocalDateTime.now();
     
     @Column(columnDefinition = "TEXT")
-    private String detalleJson; // Guarda los productos comprados en formato JSON
+    private String detalleJson;
 }

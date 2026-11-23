@@ -15,12 +15,16 @@ public class BoletaController {
     private BoletaService service;
 
     @PostMapping
-    public ResponseEntity<?> generar(@RequestBody Boleta boleta) {
-        try {
-            return ResponseEntity.ok(service.generarBoleta(boleta));
-        } catch (Exception e) {
-            e.printStackTrace(); // Para verlo en la terminal de VS Code
-            return ResponseEntity.internalServerError().body("ERROR REAL EN BOLETAS: " + e.getMessage());
+    public ResponseEntity<?> generar(@RequestBody Boleta boleta) throws Exception {
+        return ResponseEntity.ok(service.generarBoleta(boleta));
+    }
+
+    @GetMapping("/pedido/{pedidoId}")
+    public ResponseEntity<?> obtenerPorPedidoId(@PathVariable Long pedidoId) {
+        Boleta boleta = service.obtenerPorPedidoId(pedidoId);
+        if (boleta != null) {
+            return ResponseEntity.ok(boleta);
         }
+        return ResponseEntity.notFound().build();
     }
 }

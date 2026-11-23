@@ -5,6 +5,8 @@ import com.volcan.despacho.service.DespachoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -27,4 +29,9 @@ public class DespachoController {
             return ResponseEntity.internalServerError().body("ERROR: " + e.getMessage());
         }
     }
+
+    @GetMapping
+    public List<Despacho> listar() {
+    return service.listar(); 
+}
 }
