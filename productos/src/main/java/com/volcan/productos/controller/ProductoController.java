@@ -24,7 +24,7 @@ public class ProductoController {
     }
     @GetMapping("/{id}")
     public Producto obtenerPorId(@PathVariable Long id) {
-        return service.obtenerPorId(id); // Debes tener este método en tu ProductoService
+        return service.obtenerPorId(id);  
     }
 
     @DeleteMapping("/{id}")

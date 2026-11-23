@@ -14,12 +14,12 @@ public class ProductoService {
     public List<Producto> listar() { return repository.findAll(); }
     public Producto guardar(Producto p) { return repository.save(p); }
     
-    // --- AGREGA ESTE MÉTODO ---
+    
     public Producto obtenerPorId(Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Producto no encontrado con ID: " + id));
     }
-    // --------------------------
+    
 
     public Producto actualizar(Long id, Producto p) {
         Producto existente = repository.findById(id).orElseThrow();

@@ -23,5 +23,5 @@ public class Usuario {
     private String password;
     private String tipoUsuario;
     private String direccion;
-    private String rol; // "ADMIN" o "CLIENTE"
+    private String rol; 
 }

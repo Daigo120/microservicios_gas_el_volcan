@@ -3,7 +3,7 @@ package com.volcan.pedidos.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import com.fasterxml.jackson.annotation.JsonManagedReference; // <-- IMPORTANTE
+import com.fasterxml.jackson.annotation.JsonManagedReference; 
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -26,13 +26,13 @@ public class Pedido {
     @Column(name = "fecha_creacion", insertable = false, updatable = false)
     private LocalDateTime fechaCreacion;
 
-    // --- MODIFICA ESTO ---
+  
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference // Evita el bucle infinito en el JSON
+    @JsonManagedReference 
     private List<DetallePedido> detalles;
 
-    // --- AGREGA ESTE MÉTODO HELPER ---
-    // Esto asegura que cada detalle sepa a qué pedido pertenece antes de guardar
+    
+   
     public void setDetalles(List<DetallePedido> detalles) {
         this.detalles = detalles;
         if (detalles != null) {

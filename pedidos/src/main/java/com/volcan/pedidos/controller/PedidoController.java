@@ -38,7 +38,7 @@ public class PedidoController {
     }
     @GetMapping("/{id}")
     public Pedido obtenerPorId(@PathVariable Long id) {
-    // Asumimos que tienes este método en tu PedidoService
+    
     return service.obtenerPorId(id); 
 }
 }

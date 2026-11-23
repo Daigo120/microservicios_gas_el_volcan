@@ -39,7 +39,7 @@ public class PedidoService {
                         throw new RuntimeException("Stock insuficiente para el producto ID: " + detalle.getProductoId());
                     }
 
-                    // Seteamos el precio y el nombre real del producto
+                
                     detalle.setPrecioUnitario(precioReal);
                     detalle.setNombreProducto(producto.get("nombre").toString()); 
                     

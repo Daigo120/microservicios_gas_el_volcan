@@ -18,9 +18,9 @@ public class DetallePedido {
     private Double precioUnitario;
     private String nombreProducto;
 
-    // --- AGREGA ESTO ---
+  
     @ManyToOne
     @JoinColumn(name = "pedido_id", nullable = false)
-    @JsonBackReference // Evita el bucle infinito en el JSON
+    @JsonBackReference 
     private Pedido pedido;
 }
