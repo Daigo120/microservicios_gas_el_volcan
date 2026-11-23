@@ -21,15 +21,15 @@ public class PagoService {
     private String urlPedidos;
 
     public Pago procesarPago(Pago pago) {
-        // Simulamos la pasarela: Si el monto es mayor a 0, aprobamos.
+        
         if (pago.getMonto() != null && pago.getMonto() > 0) {
             pago.setEstado("APROBADO");
             pago.setCodigoTransaccion(UUID.randomUUID().toString());
             
-            // Guardamos el pago en la base de datos de pagos
+            
             Pago pagoGuardado = repository.save(pago);
 
-            // LLAMADA AL MICROSERVICIO DE PEDIDOS (Avisar que se pagó)
+           
             String url = urlPedidos + "/" + pago.getPedidoId() + "/pagar";
             try {
                 restTemplate.postForObject(url, null, String.class);

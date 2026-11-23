@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/mensajes")
+@RequestMapping("/api/mensajeria")
 @CrossOrigin(origins = "*")
 public class MensajeriaController {
     @Autowired
