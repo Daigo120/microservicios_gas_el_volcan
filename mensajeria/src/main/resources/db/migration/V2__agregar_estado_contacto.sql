@@ -1,0 +1,2 @@
+ALTER TABLE contactos ADD COLUMN respondido BOOLEAN DEFAULT FALSE;
+ALTER TABLE contactos ADD COLUMN respuesta TEXT;
