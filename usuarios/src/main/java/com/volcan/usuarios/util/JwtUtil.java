@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-    // Clave secreta (en producción debería ir en application.properties)
+    
     private final String SECRET_KEY = "MiClaveSecretaSuperSeguraParaGasElVolcan2026";
     private final SecretKey key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
 
@@ -18,7 +18,7 @@ public class JwtUtil {
                 .claim("id", id)
                 .claim("rol", rol)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + 86400000)) // 1 día de duración
+                .setExpiration(new Date(System.currentTimeMillis() + 86400000)) 
                 .signWith(key)
                 .compact();
     }
