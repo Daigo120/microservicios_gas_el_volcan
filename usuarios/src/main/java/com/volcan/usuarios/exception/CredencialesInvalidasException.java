@@ -1,0 +1,7 @@
+package com.volcan.usuarios.exception;
+
+public class CredencialesInvalidasException extends RuntimeException {
+    public CredencialesInvalidasException() {
+        super("Credenciales incorrectas");
+    }
+}
